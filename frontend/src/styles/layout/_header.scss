@@ -1,0 +1,98 @@
+header {
+	background: $catskill-white;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	padding: 15px 0;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.brand-name {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 40px;
+	font-weight: 700;
+	color: $shamrock;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+#nav {
+	flex-grow: 1;
+	.menu-title {
+		display: block;
+		text-transform: uppercase;
+		padding: 0 20px;
+		margin-bottom: 10px;
+	}
+}
+
+.navigation-menu {
+	@extend %listreset;
+
+	a {
+		display: flex;
+		align-items: center;
+		color: $manatee;
+		padding: 15px 20px;
+		text-decoration: none;
+		font-weight: 500;
+		position: relative;
+
+		&:hover,
+		&.active {
+			color: $jade;
+			background: $off-green;
+
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		span {
+			margin-left: 15px;
+		}
+
+		svg {
+			font-size: 30px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 4px;
+			background: $jade;
+			opacity: 0;
+		}
+	}
+}
+
+.extra-links {
+	@extend %listreset;
+	padding: 0 20px;
+	font-size: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -5px;
+	padding-top: 20px;
+
+	li {
+		margin: 0 5px;
+	}
+
+	a {
+		color: $manatee;
+	}
+}
