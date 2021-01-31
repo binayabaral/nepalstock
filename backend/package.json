@@ -5,7 +5,8 @@
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
-		"start": "nodemon server"
+		"start": "nodemon server",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
 	},
 	"author": "Binaya Baral",
 	"license": "MIT",
