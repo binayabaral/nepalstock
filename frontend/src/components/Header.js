@@ -66,7 +66,7 @@ const Header = () => {
 					<li>
 						<NavLink to="/all-stocks" activeClassName="active">
 							<AiOutlineStock />
-							<span>All Stocks</span>
+							<span>All Stocks Current Price</span>
 						</NavLink>
 					</li>
 					<li>

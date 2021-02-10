@@ -3,7 +3,7 @@ import axios from 'axios';
 import CurrencyChart from '../components/CurrencyChart';
 
 const CurrencyExchangeScreen = () => {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [allExchangeRates, setAllExchangeRates] = useState([]);
 	const [chartData, setChartData] = useState([]);
 	const [chartLabel, setChartLabel] = useState([]);
@@ -56,7 +56,6 @@ const CurrencyExchangeScreen = () => {
 
 	useEffect(() => {
 		const getRates = async () => {
-			setLoading(true);
 			const url = 'https://nepalstock-binaya.herokuapp.com/api/exchange-rate/historic';
 			const { data } = await axios.get(url);
 			setAllExchangeRates(data);

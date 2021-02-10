@@ -3,11 +3,13 @@
 	border-radius: 50%;
 	border-top: 5px solid $jade;
 	width: 200px;
-	margin: 0 auto;
 	height: 200px;
-	margin-top: 50px;
 	-webkit-animation: spin 1s linear infinite; /* Safari */
 	animation: spin 1s linear infinite;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 /* Safari */
