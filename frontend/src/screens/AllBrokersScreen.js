@@ -64,13 +64,17 @@ const AllBrokersScreen = () => {
 														))}
 													</div>
 												</td>
-												<td>
-													<div className="table-links-wrapper">
-														<a href={broker.website} target="_blank" rel="noreferrer">
-															Visit Website
-														</a>
-													</div>
-												</td>
+												{index === 0 ? (
+													<td rowSpan={broker.branches ? broker.branches.length : 1}>
+														<div className="table-links-wrapper">
+															<a href={broker.website} target="_blank" rel="noreferrer">
+																Visit Website
+															</a>
+														</div>
+													</td>
+												) : (
+													''
+												)}
 											</tr>
 										));
 									})}
