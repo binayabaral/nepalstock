@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import DataTable, { createTheme } from 'react-data-table-component';
 
-const AllStocksScreen = () => {
+const AllStocksScreen = ({ history }) => {
 	const [allStocksPrices, setAllStockPrices] = useState([]);
 	const [filteredStocksPrices, setFilteredStockPrices] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -54,12 +54,43 @@ const AllStocksScreen = () => {
 		},
 	};
 
+	const conditionalRowStyles = [
+		{
+			when: row => row.lastUpdatedPrice < row.previousDayClosePrice,
+			style: {
+				backgroundColor: '#ffcccb',
+				'&:hover': {
+					cursor: 'pointer',
+					backgroundColor: '#fe9f9d',
+				},
+			},
+		},
+		{
+			when: row => row.lastUpdatedPrice > row.previousDayClosePrice,
+			style: {
+				backgroundColor: '#70dbaf',
+				'&:hover': {
+					cursor: 'pointer',
+					backgroundColor: '#33cc8d',
+				},
+			},
+		},
+		{
+			when: row => row.lastUpdatedPrice === row.previousDayClosePrice,
+			style: {
+				backgroundColor: '#eff7f7',
+			},
+		},
+	];
+
 	useEffect(() => {
 		const getRates = async () => {
-			const url = 'https://nepalstock-binaya.herokuapp.com/api/current-price';
-			const { data } = await axios.get(url);
-			setAllStockPrices(data);
-			setFilteredStockPrices(data);
+			const url = 'https://nepalstock-binaya.herokuapp.com/api/proxy?url=https://newweb.nepalstock.com/api/nots/nepse-data/today-price?size=300';
+			const {
+				data: { content },
+			} = await axios.get(url);
+			setAllStockPrices(content);
+			setFilteredStockPrices(content);
 			setLoading(false);
 		};
 		getRates();
@@ -83,7 +114,7 @@ const AllStocksScreen = () => {
 							<span>Search:</span>
 							<input type="text" onChange={filterInputs} />
 						</div>
-						<DataTable columns={dataTableColumns} data={filteredStocksPrices} striped="true" pagination="true" paginationPerPage={10} paginationRowsPerPageOptions={[10, 20, 30, 40, 50, 300]} theme="solarized" customStyles={customStyles} />
+						<DataTable columns={dataTableColumns} data={filteredStocksPrices} striped="true" pagination="true" paginationPerPage={10} paginationRowsPerPageOptions={[10, 20, 30, 40, 50, 300]} theme="solarized" customStyles={customStyles} conditionalRowStyles={conditionalRowStyles} onRowClicked={row => history.push(`/all-stocks/company/${row.symbol}`)} />
 					</div>
 				</section>
 			)}
