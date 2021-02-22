@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SecurityDetailPage = ({ match }) => {
+const SecurityDetailScreen = ({ match }) => {
 	return (
 		<div>
 			<h1>This is the details page for {match.params.symbol}</h1>
@@ -8,4 +8,4 @@ const SecurityDetailPage = ({ match }) => {
 	);
 };
 
-export default SecurityDetailPage;
+export default SecurityDetailScreen;

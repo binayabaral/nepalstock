@@ -5,7 +5,8 @@ import DashboardScreen from './screens/DashboardScreen';
 import CurrencyExchangeScreen from './screens/CurrencyExchangeScreen';
 import AllStocksScreen from './screens/AllStocksScreen';
 import AllBrokersScreen from './screens/AllBrokersScreen';
-import SecurityDetailPage from './screens/SecurityDetailPage';
+import SecurityDetailScreen from './screens/SecurityDetailScreen';
+import CalculatorScreen from './screens/CalculatorScreen';
 
 function App() {
 	return (
@@ -17,7 +18,8 @@ function App() {
 					<Route path="/exchange-rates" component={CurrencyExchangeScreen}></Route>
 					<Route path="/all-brokers" component={AllBrokersScreen}></Route>
 					<Route path="/all-stocks" exact component={AllStocksScreen}></Route>
-					<Route path="/all-stocks/company/:symbol" component={SecurityDetailPage}></Route>
+					<Route path="/all-stocks/company/:symbol" component={SecurityDetailScreen}></Route>
+					<Route path="/calculator" component={CalculatorScreen}></Route>
 				</Switch>
 			</main>
 		</Router>

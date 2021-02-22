@@ -63,7 +63,8 @@ $btn-font-size: inherit;
 // Forms
 $form-element-padding: $btn-padding;
 $form-element-border-color: $downriver;
-$form-element-focus-border-color: $black;
+$form-element-focus-border-color: $downriver;
+$form-element-disabled-border-color: $manatee;
 $placeholder-color: $downriver;
 
 // Headers
