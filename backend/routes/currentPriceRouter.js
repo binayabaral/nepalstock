@@ -6,7 +6,7 @@ import CurrentPrice from '../models/todaysPriceModel.js';
 import { getCurrentPrice } from '../seeders/currentPriceSeeder.js';
 
 //@description    Fetch Today's Exchange Rate
-//@route          GET /api/exchange-rate
+//@route          GET /api/current-price
 //@access         Public
 router.get(
 	'/',

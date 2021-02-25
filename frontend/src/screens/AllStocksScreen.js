@@ -79,18 +79,20 @@ const AllStocksScreen = ({ history }) => {
 			when: row => row.lastUpdatedPrice === row.previousDayClosePrice,
 			style: {
 				backgroundColor: '#eff7f7',
+				'&:hover': {
+					cursor: 'pointer',
+					backgroundColor: '#bedede',
+				},
 			},
 		},
 	];
 
 	useEffect(() => {
 		const getRates = async () => {
-			const url = 'https://nepalstock-binaya.herokuapp.com/api/proxy?url=https://newweb.nepalstock.com/api/nots/nepse-data/today-price?size=300';
-			const {
-				data: { content },
-			} = await axios.get(url);
-			setAllStockPrices(content);
-			setFilteredStockPrices(content);
+			const url = 'https://nepalstock-binaya.herokuapp.com/api/current-price';
+			const { data } = await axios.get(url);
+			setAllStockPrices(data);
+			setFilteredStockPrices(data);
 			setLoading(false);
 		};
 		getRates();
