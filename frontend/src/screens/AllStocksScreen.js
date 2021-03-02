@@ -89,8 +89,10 @@ const AllStocksScreen = ({ history }) => {
 
 	useEffect(() => {
 		const getRates = async () => {
-			const url = 'https://nepalstock-binaya.herokuapp.com/api/current-price';
-			const { data } = await axios.get(url);
+			const url = 'https://newweb.nepalstock.com/api/nots/nepse-data/today-price?size=300';
+			const {
+				data: { content: data },
+			} = await axios.get(url);
 			setAllStockPrices(data);
 			setFilteredStockPrices(data);
 			setLoading(false);
