@@ -1,0 +1,44 @@
+.security-details {
+  padding: 50px 0;
+  text-align: center;
+
+  select {
+    margin-bottom: 20px;
+  }
+
+  &__chart-wrapper {
+    position: relative;
+    min-height: 300px;
+  }
+}
+
+.security-details-info {
+  padding-bottom: 50px;
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h4,
+  .h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table {
+    .table-heading {
+      text-align: left;
+      background: $off-green;
+      color: $jade;
+      width: 25%;
+    }
+
+    td {
+      border: 1px solid $jade;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
