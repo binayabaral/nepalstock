@@ -4,8 +4,19 @@ import React, { useEffect, useState } from 'react';
 import SecurityPriceHistoryChart from '../components/SecurityPriceHistoryChart';
 
 const SecurityDetailScreen = ({ match }) => {
-  const [startDate, setStartDate] = useState('2021-06-10');
-  const [endDate, setEndDate] = useState('2021-08-14');
+  const getFormattedDate = date => {
+    const dateObj = new Date(date);
+    return `${dateObj.getFullYear()}-${(dateObj.getMonth() + 1).toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+      useGrouping: false
+    })}-${dateObj.getDate().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+      useGrouping: false
+    })}`;
+  };
+
+  const [startDate, setStartDate] = useState(getFormattedDate(new Date().setDate(new Date().getDate() - 364)));
+  const [endDate, setEndDate] = useState(getFormattedDate(new Date()));
   const [prices, setPrices] = useState([]);
   const [labels, setLabels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +38,7 @@ const SecurityDetailScreen = ({ match }) => {
       const { data } = await axios.post('https://api.sheezh.com/nepse/v1/history', {
         symbol: match.params.symbol,
         start_date: startDate,
-        end_date: endDate,
+        end_date: endDate
       });
 
       const simplifiedData = simplifyData(data);
@@ -41,24 +52,13 @@ const SecurityDetailScreen = ({ match }) => {
   useEffect(() => {
     const getCompanyInfo = async () => {
       const { data: companyData } = await axios.post('https://api.sheezh.com/nepse/v1/company', {
-        symbol: match.params.symbol,
+        symbol: match.params.symbol
       });
       setCompanyData(companyData[0]);
       setStockName(companyData[0].companyName);
     };
     getCompanyInfo();
   }, [match]);
-
-  const getFormattedDate = date => {
-    const dateObj = new Date(date);
-    return `${dateObj.getFullYear()}-${(dateObj.getMonth() + 1).toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-      useGrouping: false,
-    })}-${dateObj.getDate().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-      useGrouping: false,
-    })}`;
-  };
 
   const data = {
     labels: labels,
@@ -69,9 +69,9 @@ const SecurityDetailScreen = ({ match }) => {
         fill: true,
         borderColor: '#01bf71',
         pointRadius: '0',
-        lineTension: '0',
-      },
-    ],
+        lineTension: '0'
+      }
+    ]
   };
 
   const changeDuration = event => {
@@ -89,14 +89,25 @@ const SecurityDetailScreen = ({ match }) => {
         <div className="container">
           <h1>Details for {stockName ? stockName : match.params.symbol}</h1>
           <select name="time-select" id="time-select" onChange={changeDuration}>
-            <option value="30" defaultValue>
-              1 month
+            <option value="364" defaultValue>
+              1 year
             </option>
-            <option value="90">3 months</option>
             <option value="180">6 months</option>
-            <option value="364">1 year</option>
+            <option value="90">3 months</option>
+            <option value="30">1 month</option>
           </select>
-          <div className="security-details__chart-wrapper">{loading ? <div className="loader"></div> : <SecurityPriceHistoryChart data={data} startDate={startDate} endDate={endDate} security={match.params.symbol} />}</div>
+          <div className="security-details__chart-wrapper">
+            {loading ? (
+              <div className="loader"></div>
+            ) : (
+              <SecurityPriceHistoryChart
+                data={data}
+                startDate={startDate}
+                endDate={endDate}
+                security={match.params.symbol}
+              />
+            )}
+          </div>
         </div>
       </section>
       {companyData && (
@@ -108,7 +119,11 @@ const SecurityDetailScreen = ({ match }) => {
                 <tbody>
                   <tr>
                     <td className="table-heading">Company Email</td>
-                    <td>{companyData.companyEmail && <a href={`mailto:${companyData.companyEmail}`}>{companyData.companyEmail}</a>}</td>
+                    <td>
+                      {companyData.companyEmail && (
+                        <a href={`mailto:${companyData.companyEmail}`}>{companyData.companyEmail}</a>
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <td className="table-heading">Company Name</td>
