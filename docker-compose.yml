@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - 5000:5000
+    container_name: backend
+    volumes:
+      - ./backend:/source/api
+      - /source/api/node_modules
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    container_name: frontend
+    volumes:
+      - ./frontend:/source/webapp
+      - /source/webapp/node_modules
+    depends_on:
+      - backend
