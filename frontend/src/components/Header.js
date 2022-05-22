@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <Link to="/" className="brand-name">
         <MdBubbleChart />
-        <span>Nepal Stock</span>
+        <span>Nepal Stock new edited version</span>
       </Link>
       <nav id="nav">
         <span className="menu-title">Menu</span>
