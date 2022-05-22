@@ -4,18 +4,22 @@ import { Line } from 'react-chartjs-2';
 const CurrencyChart = props => {
   const dataFormat = {
     labels: [],
-    datasets: [],
+    datasets: []
   };
   const [data, setData] = useState(dataFormat);
 
   const options = {
     legend: {
-      display: false,
+      display: false
     },
     title: {
       display: true,
-      text: `Exchange rates from ${props.startDate ? props.startDate : ''} to ${props.endDate ? props.endDate : ''} for ${props.primaryCurrency ? props.primaryCurrency : ''}-${props.secondaryCurrency ? props.secondaryCurrency : ''} conversion`,
-      position: 'bottom',
+      text: `Exchange rates from ${props.startDate ? props.startDate : ''} to ${
+        props.endDate ? props.endDate : ''
+      } for ${props.primaryCurrency ? props.primaryCurrency : ''}-${
+        props.secondaryCurrency ? props.secondaryCurrency : ''
+      } conversion`,
+      position: 'bottom'
     },
     scales: {
       yAxes: [
@@ -23,25 +27,27 @@ const CurrencyChart = props => {
           scaleLabel: {
             display: true,
             fontSize: 20,
-            labelString: `1 ${props.primaryCurrency ? props.primaryCurrency : ''} = ↓ ${props.secondaryCurrency ? props.secondaryCurrency : ''}`,
+            labelString: `1 ${props.primaryCurrency ? props.primaryCurrency : ''} = ↓ ${
+              props.secondaryCurrency ? props.secondaryCurrency : ''
+            }`
           },
           ticks: {
-            beginAtZero: false,
-          },
-        },
+            beginAtZero: false
+          }
+        }
       ],
       xAxes: [
         {
           ticks: {
-            display: false,
+            display: false
           },
           gridLines: {
-            display: false,
-          },
-        },
-      ],
+            display: false
+          }
+        }
+      ]
     },
-    responsive: true,
+    responsive: true
   };
 
   const getChartData = canvas => {
@@ -59,7 +65,11 @@ const CurrencyChart = props => {
     setData(props.data);
   }, [props.data]);
 
-  return <div className="currency-chart-wrapper">{data.datasets.length && <Line data={getChartData} options={options} />}</div>;
+  return (
+    <div className="currency-chart-wrapper">
+      {data.datasets.length && <Line data={getChartData} options={options} />}
+    </div>
+  );
 };
 
 export default CurrencyChart;

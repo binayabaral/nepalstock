@@ -1,23 +1,23 @@
 .all-stock-prices {
-	padding: 50px 0 0;
+  padding: 50px 0 0;
 
-	h1 {
-		text-align: center;
-	}
+  h1 {
+    text-align: center;
+  }
 }
 
 .search-input-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 
-	span {
-		margin-right: 15px;
-	}
+  span {
+    margin-right: 15px;
+  }
 
-	input[type='text'] {
-		border-color: $manatee;
-		width: 200px;
-	}
+  input[type='text'] {
+    border-color: $manatee;
+    width: 200px;
+  }
 }

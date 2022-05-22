@@ -27,9 +27,9 @@ const CurrencyExchangeScreen = () => {
         fill: true,
         borderColor: '#01bf71',
         pointRadius: '0',
-        lineTension: '0',
-      },
-    ],
+        lineTension: '0'
+      }
+    ]
   };
 
   const getchartData = allData => {
@@ -39,11 +39,20 @@ const CurrencyExchangeScreen = () => {
       if (primaryCurrency === 'NPR' && secondaryCurrency === 'NPR') {
         requiredData.push(1);
       } else if (primaryCurrency === 'NPR') {
-        requiredData.push((1 / (allData[i][secondaryCurrency][0].buy / allData[i][secondaryCurrency][0].unit)).toFixed(5));
+        requiredData.push(
+          (1 / (allData[i][secondaryCurrency][0].buy / allData[i][secondaryCurrency][0].unit)).toFixed(5)
+        );
       } else if (secondaryCurrency === 'NPR') {
         requiredData.push((allData[i][primaryCurrency][0].buy / allData[i][primaryCurrency][0].unit).toFixed(5));
       } else {
-        requiredData.push(((allData[i][primaryCurrency][0].buy / allData[i][primaryCurrency][0].unit / allData[i][secondaryCurrency][0].buy) * allData[i][secondaryCurrency][0].unit).toFixed(5));
+        requiredData.push(
+          (
+            (allData[i][primaryCurrency][0].buy /
+              allData[i][primaryCurrency][0].unit /
+              allData[i][secondaryCurrency][0].buy) *
+            allData[i][secondaryCurrency][0].unit
+          ).toFixed(5)
+        );
       }
       requiredLabel.push(allData[i].date.slice(0, 10));
     }
@@ -56,7 +65,7 @@ const CurrencyExchangeScreen = () => {
 
   useEffect(() => {
     const getRates = async () => {
-      const url = 'https://nepalstock-binaya.herokuapp.com/api/exchange-rate/historic';
+      const url = `${process.env.REACT_APP_API_BASE_URI}/api/exchange-rate/historic`;
       const { data } = await axios.get(url);
       setAllExchangeRates(data);
       setLoading(false);
@@ -97,7 +106,13 @@ const CurrencyExchangeScreen = () => {
           <section className="exchange-chart">
             <div className="container">
               <h1>Currency Rates</h1>
-              <CurrencyChart data={data} startDate={data.labels[0]} endDate={data.labels[data.labels.length - 1]} primaryCurrency={primaryCurrency} secondaryCurrency={secondaryCurrency} />
+              <CurrencyChart
+                data={data}
+                startDate={data.labels[0]}
+                endDate={data.labels[data.labels.length - 1]}
+                primaryCurrency={primaryCurrency}
+                secondaryCurrency={secondaryCurrency}
+              />
             </div>
           </section>
           <section className="currency-conversion">

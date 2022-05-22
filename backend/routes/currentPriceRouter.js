@@ -9,26 +9,26 @@ import { getCurrentPrice } from '../seeders/currentPriceSeeder.js';
 //@route          GET /api/current-price
 //@access         Public
 router.get(
-	'/',
-	asynchandler(async (req, res) => {
-		const todaysRate = await CurrentPrice.find();
-		res.json(todaysRate);
-	})
+  '/',
+  asynchandler(async (req, res) => {
+    const todaysRate = await CurrentPrice.find();
+    res.json(todaysRate);
+  })
 );
 
 //@description    Update Todays Rate
 //@route          GET /api/current-price/update-stock-prices
 //@access         Public
 router.get(
-	'/update-stock-prices',
-	asynchandler(async (req, res) => {
-		try {
-			await getCurrentPrice();
-			res.json({ message: 'SUCCESSFUL' });
-		} catch (eror) {
-			res.status(404).json({ message: 'ERROR' });
-		}
-	})
+  '/update-stock-prices',
+  asynchandler(async (req, res) => {
+    try {
+      await getCurrentPrice();
+      res.json({ message: 'SUCCESSFUL' });
+    } catch (eror) {
+      res.status(404).json({ message: 'ERROR' });
+    }
+  })
 );
 
 export default router;

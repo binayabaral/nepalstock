@@ -9,21 +9,21 @@ import SecurityDetailScreen from './screens/SecurityDetailScreen';
 import CalculatorScreen from './screens/CalculatorScreen';
 
 function App() {
-	return (
-		<Router>
-			<Header />
-			<main className="main">
-				<Switch>
-					<Route path="/dashboard" component={DashboardScreen}></Route>
-					<Route path="/exchange-rates" component={CurrencyExchangeScreen}></Route>
-					<Route path="/all-brokers" component={AllBrokersScreen}></Route>
-					<Route path="/all-stocks" exact component={AllStocksScreen}></Route>
-					<Route path="/all-stocks/company/:symbol" component={SecurityDetailScreen}></Route>
-					<Route path="/calculator" component={CalculatorScreen}></Route>
-				</Switch>
-			</main>
-		</Router>
-	);
+  return (
+    <Router>
+      <Header />
+      <main className="main">
+        <Switch>
+          <Route path="/dashboard" component={DashboardScreen}></Route>
+          <Route path="/exchange-rates" component={CurrencyExchangeScreen}></Route>
+          <Route path="/all-brokers" component={AllBrokersScreen}></Route>
+          <Route path="/all-stocks" exact component={AllStocksScreen}></Route>
+          <Route path="/all-stocks/company/:symbol" component={SecurityDetailScreen}></Route>
+          <Route path="/calculator" component={CalculatorScreen}></Route>
+        </Switch>
+      </main>
+    </Router>
+  );
 }
 
 export default App;

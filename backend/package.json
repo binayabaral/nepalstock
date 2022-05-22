@@ -1,25 +1,25 @@
 {
-	"name": "nepal-stock",
-	"version": "1.0.0",
-	"description": "",
-	"main": "server.js",
-	"type": "module",
-	"scripts": {
-		"start": "nodemon server",
-		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
-	},
-	"author": "Binaya Baral",
-	"license": "MIT",
-	"dependencies": {
-		"axios": "^0.21.2",
-		"colors": "^1.4.0",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"express-async-handler": "^1.1.4",
-		"mongoose": "^5.11.14"
-	},
-	"devDependencies": {
-		"nodemon": "^2.0.7"
-	}
+  "name": "nepal-stock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
+  },
+  "author": "Binaya Baral",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }

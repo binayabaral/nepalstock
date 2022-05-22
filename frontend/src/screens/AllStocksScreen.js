@@ -16,41 +16,41 @@ const AllStocksScreen = ({ history }) => {
     { name: 'Closing Price', selector: 'ClosingPrice', sortable: true },
     { name: 'Previous Closing Value', selector: 'PreviousClosing', sortable: true },
     { name: 'Difference', selector: 'Difference', sortable: true },
-    { name: 'Percent Difference', selector: 'PercentDifference', sortable: true },
+    { name: 'Percent Difference', selector: 'PercentDifference', sortable: true }
   ];
 
   createTheme('solarized', {
     text: {
       primary: '#000000',
-      secondary: '#000000',
+      secondary: '#000000'
     },
     background: {
-      default: '#eff7f7',
+      default: '#eff7f7'
     },
     divider: {
-      default: 'transparent',
+      default: 'transparent'
     },
     action: {
       button: 'rgba(0,0,0,.54)',
       hover: 'rgba(0,0,0,.08)',
-      disabled: 'rgba(0,0,0,.12)',
-    },
+      disabled: 'rgba(0,0,0,.12)'
+    }
   });
 
   const customStyles = {
     rows: {
       style: {
-        fontSize: 'inherit',
-      },
+        fontSize: 'inherit'
+      }
     },
     headCells: {
       style: {
         fontSize: 'inherit',
         background: '#dff7eb',
         color: '#01bf71',
-        minHeight: '80px',
-      },
-    },
+        minHeight: '80px'
+      }
+    }
   };
 
   const conditionalRowStyles = [
@@ -60,9 +60,9 @@ const AllStocksScreen = ({ history }) => {
         backgroundColor: '#ffcccb',
         '&:hover': {
           cursor: 'pointer',
-          backgroundColor: '#fe9f9d',
-        },
-      },
+          backgroundColor: '#fe9f9d'
+        }
+      }
     },
     {
       when: row => row.ClosingPrice > row.PreviousClosing,
@@ -70,9 +70,9 @@ const AllStocksScreen = ({ history }) => {
         backgroundColor: '#70dbaf',
         '&:hover': {
           cursor: 'pointer',
-          backgroundColor: '#33cc8d',
-        },
-      },
+          backgroundColor: '#33cc8d'
+        }
+      }
     },
     {
       when: row => row.ClosingPrice === row.PreviousClosing,
@@ -80,10 +80,10 @@ const AllStocksScreen = ({ history }) => {
         backgroundColor: '#eff7f7',
         '&:hover': {
           cursor: 'pointer',
-          backgroundColor: '#bedede',
-        },
-      },
-    },
+          backgroundColor: '#bedede'
+        }
+      }
+    }
   ];
 
   const formatData = stockPrices => {
@@ -108,7 +108,9 @@ const AllStocksScreen = ({ history }) => {
   }, []);
 
   const filterInputs = e => {
-    const filtered = allStocksPrices.filter(element => element.StockSymbol.toUpperCase().includes(e.target.value.toUpperCase()));
+    const filtered = allStocksPrices.filter(element =>
+      element.StockSymbol.toUpperCase().includes(e.target.value.toUpperCase())
+    );
     setFilteredStockPrices(filtered);
   };
 
@@ -124,7 +126,18 @@ const AllStocksScreen = ({ history }) => {
               <span>Search by Symbol:</span>
               <input type="text" onChange={filterInputs} />
             </div>
-            <DataTable columns={dataTableColumns} data={filteredStocksPrices} striped="true" pagination="true" paginationPerPage={10} paginationRowsPerPageOptions={[10, 20, 30, 40, 50, 300]} theme="solarized" customStyles={customStyles} conditionalRowStyles={conditionalRowStyles} onRowClicked={row => history.push(`/all-stocks/company/${row.StockSymbol}`)} />
+            <DataTable
+              columns={dataTableColumns}
+              data={filteredStocksPrices}
+              striped="true"
+              pagination="true"
+              paginationPerPage={10}
+              paginationRowsPerPageOptions={[10, 20, 30, 40, 50, 300]}
+              theme="solarized"
+              customStyles={customStyles}
+              conditionalRowStyles={conditionalRowStyles}
+              onRowClicked={row => history.push(`/all-stocks/company/${row.StockSymbol}`)}
+            />
           </div>
         </section>
       )}

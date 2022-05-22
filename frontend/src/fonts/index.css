@@ -1,95 +1,129 @@
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-BoldItalic.eot');
-	src: local('Cera Compact Pro Bold Italic'), local('CeraCompactPro-BoldItalic'), url('CeraCompactPro-BoldItalic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-BoldItalic.woff2') format('woff2'), url('CeraCompactPro-BoldItalic.woff') format('woff'), url('CeraCompactPro-BoldItalic.ttf') format('truetype');
-	font-weight: bold;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-BoldItalic.eot');
+  src: local('Cera Compact Pro Bold Italic'), local('CeraCompactPro-BoldItalic'),
+    url('CeraCompactPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-BoldItalic.woff2') format('woff2'), url('CeraCompactPro-BoldItalic.woff') format('woff'),
+    url('CeraCompactPro-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-LightItalic.eot');
-	src: local('Cera Compact Pro Light Italic'), local('CeraCompactPro-LightItalic'), url('CeraCompactPro-LightItalic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-LightItalic.woff2') format('woff2'), url('CeraCompactPro-LightItalic.woff') format('woff'), url('CeraCompactPro-LightItalic.ttf') format('truetype');
-	font-weight: 300;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-LightItalic.eot');
+  src: local('Cera Compact Pro Light Italic'), local('CeraCompactPro-LightItalic'),
+    url('CeraCompactPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-LightItalic.woff2') format('woff2'), url('CeraCompactPro-LightItalic.woff') format('woff'),
+    url('CeraCompactPro-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-MediumItalic.eot');
-	src: local('Cera Compact Pro Medium Italic'), local('CeraCompactPro-MediumItalic'), url('CeraCompactPro-MediumItalic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-MediumItalic.woff2') format('woff2'), url('CeraCompactPro-MediumItalic.woff') format('woff'), url('CeraCompactPro-MediumItalic.ttf') format('truetype');
-	font-weight: 500;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-MediumItalic.eot');
+  src: local('Cera Compact Pro Medium Italic'), local('CeraCompactPro-MediumItalic'),
+    url('CeraCompactPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-MediumItalic.woff2') format('woff2'), url('CeraCompactPro-MediumItalic.woff') format('woff'),
+    url('CeraCompactPro-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Thin.eot');
-	src: local('Cera Compact Pro Thin'), local('CeraCompactPro-Thin'), url('CeraCompactPro-Thin.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Thin.woff2') format('woff2'), url('CeraCompactPro-Thin.woff') format('woff'), url('CeraCompactPro-Thin.ttf') format('truetype');
-	font-weight: 100;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Thin.eot');
+  src: local('Cera Compact Pro Thin'), local('CeraCompactPro-Thin'),
+    url('CeraCompactPro-Thin.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Thin.woff2') format('woff2'),
+    url('CeraCompactPro-Thin.woff') format('woff'), url('CeraCompactPro-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Medium.eot');
-	src: local('Cera Compact Pro Medium'), local('CeraCompactPro-Medium'), url('CeraCompactPro-Medium.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Medium.woff2') format('woff2'), url('CeraCompactPro-Medium.woff') format('woff'), url('CeraCompactPro-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Medium.eot');
+  src: local('Cera Compact Pro Medium'), local('CeraCompactPro-Medium'),
+    url('CeraCompactPro-Medium.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-Medium.woff2') format('woff2'), url('CeraCompactPro-Medium.woff') format('woff'),
+    url('CeraCompactPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-BlackItalic.eot');
-	src: local('Cera Compact Pro Black Italic'), local('CeraCompactPro-BlackItalic'), url('CeraCompactPro-BlackItalic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-BlackItalic.woff2') format('woff2'), url('CeraCompactPro-BlackItalic.woff') format('woff'), url('CeraCompactPro-BlackItalic.ttf') format('truetype');
-	font-weight: 900;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-BlackItalic.eot');
+  src: local('Cera Compact Pro Black Italic'), local('CeraCompactPro-BlackItalic'),
+    url('CeraCompactPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-BlackItalic.woff2') format('woff2'), url('CeraCompactPro-BlackItalic.woff') format('woff'),
+    url('CeraCompactPro-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Light.eot');
-	src: local('Cera Compact Pro Light'), local('CeraCompactPro-Light'), url('CeraCompactPro-Light.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Light.woff2') format('woff2'), url('CeraCompactPro-Light.woff') format('woff'), url('CeraCompactPro-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Light.eot');
+  src: local('Cera Compact Pro Light'), local('CeraCompactPro-Light'),
+    url('CeraCompactPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-Light.woff2') format('woff2'), url('CeraCompactPro-Light.woff') format('woff'),
+    url('CeraCompactPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Bold.eot');
-	src: local('Cera Compact Pro Bold'), local('CeraCompactPro-Bold'), url('CeraCompactPro-Bold.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Bold.woff2') format('woff2'), url('CeraCompactPro-Bold.woff') format('woff'), url('CeraCompactPro-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Bold.eot');
+  src: local('Cera Compact Pro Bold'), local('CeraCompactPro-Bold'),
+    url('CeraCompactPro-Bold.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Bold.woff2') format('woff2'),
+    url('CeraCompactPro-Bold.woff') format('woff'), url('CeraCompactPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Regular.eot');
-	src: local('Cera Compact Pro Regular'), local('CeraCompactPro-Regular'), url('CeraCompactPro-Regular.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Regular.woff2') format('woff2'), url('CeraCompactPro-Regular.woff') format('woff'), url('CeraCompactPro-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Regular.eot');
+  src: local('Cera Compact Pro Regular'), local('CeraCompactPro-Regular'),
+    url('CeraCompactPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-Regular.woff2') format('woff2'), url('CeraCompactPro-Regular.woff') format('woff'),
+    url('CeraCompactPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Black.eot');
-	src: local('Cera Compact Pro Black'), local('CeraCompactPro-Black'), url('CeraCompactPro-Black.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Black.woff2') format('woff2'), url('CeraCompactPro-Black.woff') format('woff'), url('CeraCompactPro-Black.ttf') format('truetype');
-	font-weight: 900;
-	font-style: normal;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Black.eot');
+  src: local('Cera Compact Pro Black'), local('CeraCompactPro-Black'),
+    url('CeraCompactPro-Black.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-Black.woff2') format('woff2'), url('CeraCompactPro-Black.woff') format('woff'),
+    url('CeraCompactPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-ThinItalic.eot');
-	src: local('Cera Compact Pro Thin Italic'), local('CeraCompactPro-ThinItalic'), url('CeraCompactPro-ThinItalic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-ThinItalic.woff2') format('woff2'), url('CeraCompactPro-ThinItalic.woff') format('woff'), url('CeraCompactPro-ThinItalic.ttf') format('truetype');
-	font-weight: 100;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-ThinItalic.eot');
+  src: local('Cera Compact Pro Thin Italic'), local('CeraCompactPro-ThinItalic'),
+    url('CeraCompactPro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-ThinItalic.woff2') format('woff2'), url('CeraCompactPro-ThinItalic.woff') format('woff'),
+    url('CeraCompactPro-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
 }
 
 @font-face {
-	font-family: 'Cera Compact Pro';
-	src: url('CeraCompactPro-Italic.eot');
-	src: local('Cera Compact Pro Italic'), local('CeraCompactPro-Italic'), url('CeraCompactPro-Italic.eot?#iefix') format('embedded-opentype'), url('CeraCompactPro-Italic.woff2') format('woff2'), url('CeraCompactPro-Italic.woff') format('woff'), url('CeraCompactPro-Italic.ttf') format('truetype');
-	font-weight: normal;
-	font-style: italic;
+  font-family: 'Cera Compact Pro';
+  src: url('CeraCompactPro-Italic.eot');
+  src: local('Cera Compact Pro Italic'), local('CeraCompactPro-Italic'),
+    url('CeraCompactPro-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraCompactPro-Italic.woff2') format('woff2'), url('CeraCompactPro-Italic.woff') format('woff'),
+    url('CeraCompactPro-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }

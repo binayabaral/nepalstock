@@ -7,11 +7,11 @@ import BrokerInfo from '../models/brokerInfoModel.js';
 //@route          GET /api/broker-info
 //@access         Public
 router.get(
-	'/',
-	asynchandler(async (req, res) => {
-		const brokerInfo = await BrokerInfo.find();
-		res.json(brokerInfo);
-	})
+  '/',
+  asynchandler(async (req, res) => {
+    const brokerInfo = await BrokerInfo.find();
+    res.json(brokerInfo);
+  })
 );
 
 export default router;
